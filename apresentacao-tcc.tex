@@ -1,0 +1,180 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage[english,brazil]{babel}
+\usepackage[brazil]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{url,color,ae}
+\usepackage{listings,color,upquote}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color,colortbl,multirow}
+\hypersetup{pdftitle={IFC - Campus Araquari},
+    pdfsubject={Informatica}
+}
+\usepackage{url}
+\usetheme[numbers,totalnumber,compress]{Madrid}
+% \usetheme{Warsaw}
+% \usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Montpellier}
+% \usetheme{Hannover}
+%\usetheme{Dresden}
+
+\definecolor{verdeescuro}{rgb}{0,0.40,0}
+\definecolor{verde}{rgb}{0.55,0.78,0.25}
+
+% Comando: \shell
+\newcommand{\shell}
+{\lstset{language=csh,basicstyle=\ttfamily\footnotesize,tabsize=3,frame=single,showtabs=false,showspaces=false,firstnumber=last,numbers=left,numberstyle=\tiny,linewidth=0.98\linewidth,xleftmargin=21pt,tab=$\to$,float=tbph,extendedchars,breaklines,showstringspaces=false,identifierstyle=\color{colIdentifier},keywordstyle=\color{colKeys},stringstyle=\color{colString},commentstyle=\color{colComments},backgroundcolor=\color{hellgelb},columns=flexible,captionpos=b,aboveskip=\bigskipamount}}
+
+% ------------------------------------------------------------------ %
+% Deixando o tema mais verde. Comente a linha abaixo se não gostar %
+%\setbeamercolor{structure}{fg=verdeescuro}
+% ------------------------------------------------------------------ %
+% Deixando o verde mais claro para combinar com o logo do IFET
+% Descomente as linhas abaixo
+
+\setbeamercolor{structure}{fg=verde}
+\setbeamercolor{title}{fg=black,bg=verde!80!black}
+\setbeamercolor{frametitle}{fg=black,bg=verde!25}
+\setbeamercolor{block body}{fg=black,bg=verde!15}
+\setbeamercolor{block title}{fg=white,bg=verdeescuro}
+\setbeamercolor{item}{fg=verde!80!black} %cor marcador
+\setbeamertemplate{items}[triangle] % tipos de marcadores square, triangle, circle,ball
+% ------------------------------------------------------------------ %
+% para não aparecer aqueles ícones de navegação no canto direito inferior
+%\beamertemplatenavigationsymbolsempty
+
+\title[Sistemas de Informação]{\textbf{Análise de sentimentos\\ relacionados a notícias}} %Título Apresentação
+\subtitle{\textit{TCC I}}
+
+\institute[IFC]{
+Instituto Federal Catarinense -- IFC\\
+Campus Araquari \\
+}
+
+\author{Anderson Pontes Batalha}
+
+% ----- Logo IFC --------%
+\pgfdeclareimage[width=1.8cm]{logo}{logoifccompleto}
+\logo{\pgfuseimage{logo}}
+
+\date{\tiny{\today}}
+
+% ------------ Inicio do documento ---------------%
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\AtBeginSection[]{
+  \frame[allowframebreaks]{
+    \frametitle{}
+    \tableofcontents[current,currentsection]
+  }
+}
+
+% -------------------------------------------------%
+\section{Ideia central}
+\setbeamercovered{transparent}%efeito de transparência para transição uma vez colocada na apresentação aplica a todos os frames
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Definição da Linguagem}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1-> Selecionar notícias de grande relevância
+%\item<2-> 
+%\item<3-> 
+%\item<4-> 
+\end{itemize}
+\end{frame}
+
+\section{Motivação}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Estrutura Básica}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1-> O documento possui uma estrutura de árvore onde existe uma relação de parentesco entre os elementos.
+\item<2-> Separação entre o conteúdo e a formatação do documento.
+\end{itemize}
+\end{frame}
+
+\section{Principais Tags}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Principais Tags}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1-> Não existem tags definidas, por ser uma linguagem extensiva, permite a definição de um número infinito de tags, ficando a critério do usuário.
+\end{itemize}
+\end{frame}
+
+\section{Funcionamento}
+\begin{frame}[fragile]%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Funcionamento}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1-> Um documento XML inicia informando a versão do XML e a codificação dos caracteres contidos. Todo documento precisa ter esta linha inicial.
+\begin{verbatim}
+<?xml version="1.0" encoding="utf-8"?>
+\end{verbatim}
+\item<2-> Em seguida é criada uma “tag” que engloba todo o documento.
+\begin{verbatim}
+<elemento_raiz> 
+
+</elemento_raiz>	
+\end{verbatim}
+\item<3-> A criação de outros elementos segue o mesmo padrão, abre a tag, insere o conteúdo e fecha a tag. Exemplo:
+\begin{verbatim}
+<elementopai>
+  	<elementofilho>Informação</elementofilho>
+</elementopai>
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\section{Modelo de utilização}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Modelo de utilização}\transdissolve}%efeito de transição do frame%
+\begin{verbatim}%início da lista%
+<?xml version="1.0" encoding="UTF-8"?>
+
+<produtos>
+
+    <produto>
+
+        <codigo>1</codigo>
+
+        <descricao>Livro</descricao>
+
+        <preco>21.75</preco>
+
+    </produto>
+
+    <produto>
+
+        <codigo>2</codigo>
+
+        <descricao>Tênis</descricao>
+
+        <preco>99.99</preco>
+        
+    </produto>
+
+</produtos>
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Referência Bibliográfica}
+{\scriptsize http://goo.gl/TPIbKG} \\
+{\scriptsize http://goo.gl/12G6Aw} \\
+{\scriptsize http://goo.gl/koFHNU2} \\
+{\scriptsize http://goo.gl/GDw5gN} \\
+{\scriptsize http://goo.gl/nrEzzF} \\
+{\scriptsize http://goo.gl/S6Ylac} \\
+{\scriptsize http://goo.gl/VEBz6A} \\
+{\scriptsize http://goo.gl/iSpnOy} \\
+\end{frame}
+
+\end{document}
