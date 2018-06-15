@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{indentfirst}
 \usepackage{color,colortbl,multirow}
 \hypersetup{pdftitle={IFC - Campus Araquari},
     pdfsubject={Informatica}
@@ -32,7 +33,7 @@
 
 % ------------------------------------------------------------------ %
 % Deixando o tema mais verde. Comente a linha abaixo se não gostar %
-%\setbeamercolor{structure}{fg=verdeescuro}
+\setbeamercolor{structure}{fg=verdeescuro}
 % ------------------------------------------------------------------ %
 % Deixando o verde mais claro para combinar com o logo do IFET
 % Descomente as linhas abaixo
@@ -80,101 +81,133 @@ Campus Araquari \\
 }
 
 % -------------------------------------------------%
-\section{Ideia central}
+\section{Tema}
 \setbeamercovered{transparent}%efeito de transparência para transição uma vez colocada na apresentação aplica a todos os frames
 \begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Definição da Linguagem}\transdissolve}%efeito de transição do frame%
+\frametitle{\textbf{Tema}\transdissolve}%efeito de transição do frame%
 \begin{itemize}%início da lista%
-\item<1-> Selecionar notícias de grande relevância
-%\item<2-> 
-%\item<3-> 
-%\item<4-> 
+\item<1-> Utilizar a análise de sentimentos para determinar a polaridade de mensagens relacionadas a fatos de grande repercussão nas redes sociais (Twitter e Facebook);
+\end{itemize}
+\end{frame}
+
+\section{Delimitação do tema}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Delimitação do tema}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->
 \end{itemize}
 \end{frame}
 
 \section{Motivação}
 \begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Estrutura Básica}\transdissolve}%efeito de transição do frame%
+\frametitle{\textbf{Motivação}\transdissolve}%efeito de transição do frame%
 \begin{itemize}%início da lista%
-\item<1-> O documento possui uma estrutura de árvore onde existe uma relação de parentesco entre os elementos.
-\item<2-> Separação entre o conteúdo e a formatação do documento.
+\item<1->Existem poucos trabalhos com foco em opiniões expressas sobre notícias.
 \end{itemize}
+
 \end{frame}
 
-\section{Principais Tags}
+\section{Justificativa}
 \begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Principais Tags}\transdissolve}%efeito de transição do frame%
+\frametitle{\textbf{Justificativa}\transdissolve}%efeito de transição do frame%
 \begin{itemize}%início da lista%
-\item<1-> Não existem tags definidas, por ser uma linguagem extensiva, permite a definição de um número infinito de tags, ficando a critério do usuário.
+\item<1->Popularização das redes sociais
+\item<2->Grandes quantidades de dados gerados
+\item<3->Usuários estão constantemente trocando informações entre si e emitindo opiniões sobre os mais variados assuntos
+\item<4->Comportamento das pessoas é influenciado pelas opiniões de outras pessoas
 \end{itemize}
+
 \end{frame}
 
-\section{Funcionamento}
-\begin{frame}[fragile]%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Funcionamento}\transdissolve}%efeito de transição do frame%
-\begin{itemize}%início da lista%
-\item<1-> Um documento XML inicia informando a versão do XML e a codificação dos caracteres contidos. Todo documento precisa ter esta linha inicial.
-\begin{verbatim}
-<?xml version="1.0" encoding="utf-8"?>
-\end{verbatim}
-\item<2-> Em seguida é criada uma “tag” que engloba todo o documento.
-\begin{verbatim}
-<elemento_raiz> 
-
-</elemento_raiz>	
-\end{verbatim}
-\item<3-> A criação de outros elementos segue o mesmo padrão, abre a tag, insere o conteúdo e fecha a tag. Exemplo:
-\begin{verbatim}
-<elementopai>
-  	<elementofilho>Informação</elementofilho>
-</elementopai>
-\end{verbatim}
-\end{itemize}
-\end{frame}
-
-\section{Modelo de utilização}
+\section{Objetivo geral}
 \begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Modelo de utilização}\transdissolve}%efeito de transição do frame%
-\begin{verbatim}%início da lista%
-<?xml version="1.0" encoding="UTF-8"?>
+\frametitle{\textbf{Objetivo geral}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Aplicar os métodos de detecção de sentimentos e definir qual obteve melhor desempenho utilizando os dados coletados.
+\end{itemize}
 
-<produtos>
-
-    <produto>
-
-        <codigo>1</codigo>
-
-        <descricao>Livro</descricao>
-
-        <preco>21.75</preco>
-
-    </produto>
-
-    <produto>
-
-        <codigo>2</codigo>
-
-        <descricao>Tênis</descricao>
-
-        <preco>99.99</preco>
-        
-    </produto>
-
-</produtos>
-\end{verbatim}
 \end{frame}
 
+\section{Objetivos específicos}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Objetivos específicos}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Selecionar as notícias que serão utilizadas como referência para a coleta de
+dados.
+\item<2->Pesquisar em artigos relacionados os principais métodos de detecção de sentimentos.
+\item<3->Definir um método para coleta dos dados, e por quanto tempo será realizada.
+\item<4->Realizar a limpeza e pré-processamento dos dados, retirando palavras que não exprimem sentimentos (stop words), além de gírias e abreviações.
+\item<5->Definir quais métricas para avaliação dos algoritmos de análise de sentimentos.
+\item<6->Utilizar aprendizado não supervisionado. (dicionários léxicos)
+\end{itemize}
+
+\end{frame}
+
+\section{Metodologia}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Metodologia}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Escolha das notícias
+\item<2->Coleta dos dados
+\item<3->Limpeza dos dados
+\item<4->Aplicação dos métodos de análise de sentimentos
+\item<5->Resultados
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Coleta dos dados}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Utilização de APIs do Twitter e Facebook 
+\item<2->\href{https://developer.twitter.com/en/docs/api-reference-index}{API do Twitter}
+\item<3->\href{https://developers.facebook.com/docs/graph-api?locale=pt_BR}{Graph API}
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Métodos supervisionados x não supervisionados}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Supervisionado\\
+\quad Dados rotulados\\
+\quad Definição das classes\\
+\quad Dados de treino e teste\\
+\quad Novos dados tem classes definidas a partir da similaridade com os dados de treino
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Métodos supervisionados x não supervisionados}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Não supervisionado\\
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Níveis de análise}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Documento
+\item<2->Sentença
+\item<3->Entidade
+\end{itemize}
+\end{frame}
+
+
+\section{Desafios}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Desafios}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Linguagem informal (gírias, abreviações)
+\item<2->Ironia e sarcasmo
+\item<3->Idioma: a grande maioria dos métodos disponíveis se baseiam em textos em inglês.
+
+\end{itemize}
+\end{frame}
 
 \begin{frame}
-\frametitle{Referência Bibliográfica}
-{\scriptsize http://goo.gl/TPIbKG} \\
-{\scriptsize http://goo.gl/12G6Aw} \\
-{\scriptsize http://goo.gl/koFHNU2} \\
-{\scriptsize http://goo.gl/GDw5gN} \\
-{\scriptsize http://goo.gl/nrEzzF} \\
-{\scriptsize http://goo.gl/S6Ylac} \\
-{\scriptsize http://goo.gl/VEBz6A} \\
-{\scriptsize http://goo.gl/iSpnOy} \\
+\frametitle{Referências Bibliográficas}
+\bibliography{refs}
 \end{frame}
 
+
 \end{document}
+
