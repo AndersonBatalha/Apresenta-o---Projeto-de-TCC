@@ -2,7 +2,7 @@
 \usepackage{amsmath}
 \usepackage[english,brazil]{babel}
 \usepackage[brazil]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{url,color,ae}
 \usepackage{listings,color,upquote}
@@ -12,6 +12,7 @@
 \usepackage{amsmath}
 \usepackage{indentfirst}
 \usepackage{color,colortbl,multirow}
+\usepackage{biblatex}
 \hypersetup{pdftitle={IFC - Campus Araquari},
     pdfsubject={Informatica}
 }
@@ -66,7 +67,6 @@ Campus Araquari \\
 \date{\tiny{\today}}
 
 % ------------ Inicio do documento ---------------%
-
 \begin{document}
 
 \begin{frame}
@@ -90,33 +90,127 @@ Campus Araquari \\
 \end{itemize}
 \end{frame}
 
-\section{Delimitação do tema}
+\section{Definição}
+\setbeamercovered{transparent}%efeito de transparência para transição uma vez colocada na apresentação aplica a todos os frames
 \begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Delimitação do tema}\transdissolve}%efeito de transição do frame%
+\frametitle{\textbf{Definição}\transdissolve}%efeito de transição do frame%
 \begin{itemize}%início da lista%
-\item<1->
+\item<1-> "Análise de sentimentos ou mineração de opinião é o estudo computacional de opiniões, sentimentos e emoções expressas em texto."
 \end{itemize}
-\end{frame}
-
-\section{Motivação}
-\begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Motivação}\transdissolve}%efeito de transição do frame%
-\begin{itemize}%início da lista%
-\item<1->Existem poucos trabalhos com foco em opiniões expressas sobre notícias.
-\end{itemize}
-
 \end{frame}
 
 \section{Justificativa}
 \begin{frame}%início de frame, cada frame é uma tela da apresentação%
 \frametitle{\textbf{Justificativa}\transdissolve}%efeito de transição do frame%
 \begin{itemize}%início da lista%
-\item<1->Popularização das redes sociais
-\item<2->Grandes quantidades de dados gerados
+\item<1->Popularização das redes sociais, por consequência ocorreu o aumento do tráfego de dados gerados pelas redes sociais
 \item<3->Usuários estão constantemente trocando informações entre si e emitindo opiniões sobre os mais variados assuntos
 \item<4->Comportamento das pessoas é influenciado pelas opiniões de outras pessoas
 \end{itemize}
 
+\end{frame}
+
+\section{Aplicações}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Aplicações}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Comercial
+\item<2->Detecção de spam
+\item<3->Reviews de filmes, produtos ou serviços
+\item<4->Mercado financeiro
+\item<5->Notícias
+\item<6->Política
+
+\end{itemize}
+\end{frame}
+
+\section{Conceitos básicos}
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Tipos de opinião}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Opinião regular e opinião comparativa\\
+\qquad"Aquele é um bom restaurante"\\
+\qquad"O restaurante A é melhor que o restaurante B"\\
+\item<2->Opinião direta e opinião indireta\\
+\qquad "Este remédio é muito bom"\\
+\qquad "Minha gripe piorou depois que tomei este remédio"\\
+\item<3->Opinião implícita e opinião explícita\\
+\qquad "A câmera que comprei parou de funcionar em menos de um mês"\\
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Conceitos básicos}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Fato e Opinião
+\item<2->Entidade
+\item<3->Aspecto
+\item<4->Polaridade
+\item<5->Emoção
+\end{itemize}
+\end{frame}
+
+\section{Metodologia}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Escolha das notícias}\transdissolve}%efeito de transição do frame%
+\begin{itemize}
+    \item Selecionar fatos de grande repercussão, de preferência recentes, para servir de base para a coleta dos dados
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Coleta dos dados}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Twitter\footnote[1]{https://developer.twitter.com/en/docs/api-reference-index} e Facebook\footnote[2]{https://developers.facebook.com/docs/graph-api?locale=pt\_BR} fornecem APIs para acesso aos dados públicos dos usuários
+\item<2->Bibliotecas permitem construir aplicações que acessem esses dados
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Limpeza dos dados}\transdissolve}%efeito de transição do frame%
+\begin{itemize}
+\item Remoção de Stop words\footnote[1]{https://www.ranks.nl/stopwords}
+\item Stemming
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Aplicação dos métodos de análise de sentimentos}\transdissolve}%efeito de transição do frame%
+\begin{itemize}
+    \item Aplicação dos métodos de análise de sentimentos no conjunto de dados
+    \item Métodos utilizados\\
+        \qquad Opinion Lexicon, SentiWordNet, SenticNet, PANAS-t, OpinionFinder e Vader (disponíveis apenas em inglês)\\
+        \qquad SentiLex-PT e OpLexicon (disponíveis em
+        português)\\
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Abordagens de análise de sentimentos}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Baseada em léxico
+\item<2->Baseada em aprendizado de máquina
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Níveis de análise}\transdissolve}%efeito de transição do frame%
+\begin{itemize}%início da lista%
+\item<1->Documento
+\item<2->Sentença
+\item<3->Entidade
+\item<4->Palavra
+\end{itemize}
+\end{frame}
+
+\begin{frame}%início de frame, cada frame é uma tela da apresentação%
+\frametitle{\textbf{Resultados}\transdissolve}%efeito de transição do frame%
+\begin{itemize}
+    \item Estabelecer uma comparação, com base nos resultados obtidos, de cada um métodos, apontando suas principais características, pontos fortes e fracos.
+\end{itemize}
 \end{frame}
 
 \section{Objetivo geral}
@@ -125,7 +219,6 @@ Campus Araquari \\
 \begin{itemize}%início da lista%
 \item<1->Aplicar os métodos de detecção de sentimentos e definir qual obteve melhor desempenho utilizando os dados coletados.
 \end{itemize}
-
 \end{frame}
 
 \section{Objetivos específicos}
@@ -138,59 +231,10 @@ dados.
 \item<3->Definir um método para coleta dos dados, e por quanto tempo será realizada.
 \item<4->Realizar a limpeza e pré-processamento dos dados, retirando palavras que não exprimem sentimentos (stop words), além de gírias e abreviações.
 \item<5->Definir quais métricas para avaliação dos algoritmos de análise de sentimentos.
-\item<6->Utilizar aprendizado não supervisionado. (dicionários léxicos)
-\end{itemize}
+\item<6->Utilizar a abordagem léxica. Este método se apresenta mais eficiente em comparação com os métodos supervisionados. 
 
-\end{frame}
-
-\section{Metodologia}
-\begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Metodologia}\transdissolve}%efeito de transição do frame%
-\begin{itemize}%início da lista%
-\item<1->Escolha das notícias
-\item<2->Coleta dos dados
-\item<3->Limpeza dos dados
-\item<4->Aplicação dos métodos de análise de sentimentos
-\item<5->Resultados
 \end{itemize}
 \end{frame}
-
-\begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Coleta dos dados}\transdissolve}%efeito de transição do frame%
-\begin{itemize}%início da lista%
-\item<1->Utilização de APIs do Twitter e Facebook 
-\item<2->\href{https://developer.twitter.com/en/docs/api-reference-index}{API do Twitter}
-\item<3->\href{https://developers.facebook.com/docs/graph-api?locale=pt_BR}{Graph API}
-\end{itemize}
-\end{frame}
-
-\begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Métodos supervisionados x não supervisionados}\transdissolve}%efeito de transição do frame%
-\begin{itemize}%início da lista%
-\item<1->Supervisionado\\
-\quad Dados rotulados\\
-\quad Definição das classes\\
-\quad Dados de treino e teste\\
-\quad Novos dados tem classes definidas a partir da similaridade com os dados de treino
-\end{itemize}
-\end{frame}
-
-\begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Métodos supervisionados x não supervisionados}\transdissolve}%efeito de transição do frame%
-\begin{itemize}%início da lista%
-\item<1->Não supervisionado\\
-\end{itemize}
-\end{frame}
-
-\begin{frame}%início de frame, cada frame é uma tela da apresentação%
-\frametitle{\textbf{Níveis de análise}\transdissolve}%efeito de transição do frame%
-\begin{itemize}%início da lista%
-\item<1->Documento
-\item<2->Sentença
-\item<3->Entidade
-\end{itemize}
-\end{frame}
-
 
 \section{Desafios}
 \begin{frame}%início de frame, cada frame é uma tela da apresentação%
@@ -198,16 +242,26 @@ dados.
 \begin{itemize}%início da lista%
 \item<1->Linguagem informal (gírias, abreviações)
 \item<2->Ironia e sarcasmo
-\item<3->Idioma: a grande maioria dos métodos disponíveis se baseiam em textos em inglês.
+\item<3->Algumas palavras podem depender de um contexto para serem compreendidas de maneira correta
+\item<4->A grande maioria dos métodos disponíveis se baseiam em textos em inglês.
 
 \end{itemize}
 \end{frame}
 
 \begin{frame}
+
 \frametitle{Referências Bibliográficas}
-\bibliography{refs}
+BENEVENUTO, Fabrício; RIBEIRO, Filipe; ARAÚJO, Matheus. Métodos para Análise de
+Sentimentos em mídias sociais. 2015.\newline
+
+BECKER, Karin; TUMITAN, Diego. Introdução à mineração de opiniões: Conceitos, aplicações e desafios. Simpósio brasileiro de banco de dados, 2013.\newline
+
+SILVA, Nadia Felix Felipe da. Análise de sentimentos em textos curtos provenientes de redes sociais. 2016. Tese de Doutorado. Universidade de São Paulo.\newline
+
+LIU, Bing. Sentiment Analysis and Subjectivity. Handbook of natural language processing, v. 2, p. 627-666, 2010.
+
 \end{frame}
 
-
 \end{document}
+
 
